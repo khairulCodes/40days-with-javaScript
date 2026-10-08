@@ -21,5 +21,47 @@ function double(a){
     return result
 }
 
-const double =double( result)
-console.log("double",double);
+const x =double( result)
+console.log("double",x);
+
+// Default parameter
+function calc(a,b=3){
+    return (2*(a+b))
+}
+
+const res =  calc(2)
+console.log("result of calc",res);
+
+// Rest parameter
+
+function restPara(a,b, ...rest){
+    console.log(a,b,rest);
+}
+restPara(5,6,1,2,3,6)
+
+// nested function
+
+function outer(){
+    console.log("outer");
+
+    return function inner(){
+        console.log("inner");
+    }
+
+    // inner()
+}
+
+const resOutr=outer()
+console.log(resOutr());
+
+// callback 
+
+function foo(func){
+    console.log("inside foo");
+
+    func()
+};
+
+foo(function(){
+    console.log('outside foo');
+})
